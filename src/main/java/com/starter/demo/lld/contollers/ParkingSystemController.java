@@ -18,6 +18,7 @@ public class ParkingSystemController {
 
     @PostMapping(path = "/get-parking-spot-and-ticket")
     public TicketDTO getParkingSpotAndTicket(@Valid @RequestBody VehicleDetailsDTO vehicleDetailsDTO) {
+        vehicleDetailsDTO.setExitTime(null);
         return parkingSystemService.getParkingSpotAndTicket(vehicleDetailsDTO);
     }
 

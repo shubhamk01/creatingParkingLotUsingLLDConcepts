@@ -14,7 +14,6 @@ public class VehicleDetailsDTO {
     @NotNull(message = "Vehicle entry time cannot be null")
     private Timestamp entryTime;
 
-    @NotNull(message = "Vehicle exit time cannot be null")
     private Timestamp exitTime;
 
     @NotNull(message = "Vehicle type plate cannot be null")

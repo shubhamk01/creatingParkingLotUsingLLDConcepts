@@ -1,6 +1,7 @@
 package com.starter.demo.lld.dto;
 
 import com.starter.demo.lld.common.enums.VehicleType;
+import com.starter.demo.lld.modals.ParkingLot;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
@@ -27,7 +28,17 @@ public class TicketDTO {
     @NotEmpty(message = "Vehicle exit time cannot be empty")
     private Timestamp exitTime;
 
+    private ParkingLot parkingLot;
+
     private double amount;
+
+    public ParkingLot getParkingLot() {
+        return parkingLot;
+    }
+
+    public void setParkingLot(ParkingLot parkingLot) {
+        this.parkingLot = parkingLot;
+    }
 
     public String getTicketId() {
         return ticketId;
