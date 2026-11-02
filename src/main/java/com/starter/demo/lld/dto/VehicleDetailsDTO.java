@@ -14,8 +14,19 @@ public class VehicleDetailsDTO {
     @NotNull(message = "Vehicle entry time cannot be null")
     private Timestamp entryTime;
 
+    @NotNull(message = "Vehicle exit time cannot be null")
+    private Timestamp exitTime;
+
     @NotNull(message = "Vehicle type plate cannot be null")
     private VehicleType vehicleType;
+
+    public Timestamp getExitTime() {
+        return exitTime;
+    }
+
+    public void setExitTime(Timestamp exitTime) {
+        this.exitTime = exitTime;
+    }
 
     public String getNumberPlate() {
         return numberPlate;
@@ -45,12 +56,12 @@ public class VehicleDetailsDTO {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         VehicleDetailsDTO that = (VehicleDetailsDTO) o;
-        return Objects.equals(numberPlate, that.numberPlate) && Objects.equals(entryTime, that.entryTime) && vehicleType == that.vehicleType;
+        return Objects.equals(numberPlate, that.numberPlate) && Objects.equals(entryTime, that.entryTime) && Objects.equals(exitTime, that.exitTime) && vehicleType == that.vehicleType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(numberPlate, entryTime, vehicleType);
+        return Objects.hash(numberPlate, entryTime, exitTime, vehicleType);
     }
 
     @Override
@@ -58,6 +69,7 @@ public class VehicleDetailsDTO {
         return "VehicleDetailsDTO{" +
                 "numberPlate='" + numberPlate + '\'' +
                 ", entryTime=" + entryTime +
+                ", exitTime=" + exitTime +
                 ", vehicleType=" + vehicleType +
                 '}';
     }
